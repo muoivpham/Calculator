@@ -39,12 +39,12 @@ class ViewController: UIViewController {
     @IBAction private func performOperation(_ sender: UIButton) {
         
         if userIsInTheMiddleOfTyping {
-            brain.setOperand(displayValue)
+            brain.setOperand(operand: displayValue)
             userIsInTheMiddleOfTyping = false
         }
         
         if let mathematicalSymbol = sender.currentTitle{
-            brain.performOperation(mathematicalSymbol)
+            brain.performOperation(symbol: mathematicalSymbol)
         }
         
         displayValue = brain.result
